@@ -1,0 +1,4 @@
+# Ignore .vscode config folder.
+.vscode
+*.o
+a.out
