@@ -1,0 +1,3 @@
+[submodule "parsing"]
+	path = parsing
+	url = git@github.com:Camy-Devlop/parsing_cub3d.git
