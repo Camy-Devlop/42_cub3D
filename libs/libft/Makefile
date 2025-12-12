@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 17:47:48 by alephoen          #+#    #+#              #
-#    Updated: 2025/09/12 23:33:17 by alephoen         ###   ########.fr        #
+#    Updated: 2025/12/12 22:59:27 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,6 @@ INCS := -I$(INCS_PATH)
 INCS_BONUS_PATH := incs_bonus
 INCS_BONUS := -I$(INCS_BONUS_PATH)
 
-.PHONY: all bonus clean fclean re objs_dir echo_build echo_build_bonus
 
 all: objs_dir echo_build $(OBJS) $(GNL_OBJS)
 # $(OBJS_PATH)
@@ -126,6 +125,9 @@ $(OBJS_PATH)/%.o: $(SRCS_PATH_BONUS)/%.c
 	@echo "$(COMPILE_ICON) $(CYAN)Compiling Bonus$(RESET) $(YELLOW)$<$(RESET) → $(GREEN)$@$(RESET)"
 	@$(CC) $(CFLAGS) $(INCS) $(INCS_BONUS) -c $< -o $@ || (echo "$(ERROR_ICON) $(RED)Compile failed: $<$(RESET)"; exit 1)
 
+libs_a: $(OBJS_PATH)
+	@ar rcs $@ $(OBJS_PATH)
+
 clean:
 	@echo "$(CLEAN_ICON) $(BLUE)Cleaning object files...$(RESET)"
 	@rm -f $(OBJS) $(OBJS_BONUS)
@@ -136,4 +138,6 @@ fclean: clean
 	@echo "$(CLEAN_ICON) $(BLUE)Removing executable:$(RESET) $(RED)$(NAME_BONUS)$(RESET)"
 	@rm -f $(NAME_BONUS)
 
-re: fclean all
+re: fclean al
+.PHONY: all bonus clean fclean re objs_dir echo_build echo_build_bonus
+
