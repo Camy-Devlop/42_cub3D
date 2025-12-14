@@ -6,7 +6,7 @@
 /*   By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 09:54:24 by alephoen          #+#    #+#             */
-/*   Updated: 2025/09/12 12:59:08 by alephoen         ###   ########.fr       */
+/*   Updated: 2025/12/14 21:11:17 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int	ft_hex2uint(const char *hex)
 	while (hex[++i] && hex[i] != ' ')
 		;
 	if (hex[i] && hex[++i] && hex[i] == ',')
-		;
+	{
+		
+	}
 	while (hex[i] && hex[++i] && hex[i] != ' ')
 		;
 	if (hex[0] == '0' && (hex[1] == 'x' || hex[1] == 'X'))

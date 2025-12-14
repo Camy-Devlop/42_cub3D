@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 17:47:48 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/12 22:59:27 by isadbaib         ###   ########.fr        #
+#    Updated: 2025/12/14 21:18:46 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ INCS_BONUS := -I$(INCS_BONUS_PATH)
 
 
 all: objs_dir echo_build $(OBJS) $(GNL_OBJS)
-# $(OBJS_PATH)
+	ar rcs libft.a $(OBJS_PATH)/*.o 
 
 # bonus: objs_dir echo_build_bonus $(NAME_BONUS)
 
@@ -138,6 +138,6 @@ fclean: clean
 	@echo "$(CLEAN_ICON) $(BLUE)Removing executable:$(RESET) $(RED)$(NAME_BONUS)$(RESET)"
 	@rm -f $(NAME_BONUS)
 
-re: fclean al
+re: fclean all
 .PHONY: all bonus clean fclean re objs_dir echo_build echo_build_bonus
 

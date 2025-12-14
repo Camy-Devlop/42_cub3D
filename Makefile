@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 15:20:21 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/12 22:59:32 by isadbaib         ###   ########.fr        #
+#    Updated: 2025/12/14 21:08:49 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ all: objs_dir start_msg libft $(NAME)
 
 libft:
 	@$(MAKE) -C $(LIBS_DIR)/libft re
-	@$(MAKE) -C $(LIBS_DIR)/libft libs_a
+#	@$(MAKE) -C $(LIBS_DIR)/libft all 
 
 objs_dir:
 	@mkdir -p $(OBJS_PATH)
