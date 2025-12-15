@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 15:20:21 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/14 21:08:49 by isadbaib         ###   ########.fr        #
+#    Updated: 2025/12/15 12:27:05 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,14 +50,14 @@ INCS_LIBFT 			:= libs/libs_so/LIBFT/incs
 INCS_GNL 			:= libs/libs_so/GNL/incs
 INCS := -I$(INCS_PATH) -I$(INCS_LIBFT) -I$(INCS_GNL)
 
-LIBFT_PATH := libs/libs_so/LIBFT
+LIBFT_PATH := libs/libft
 LIBFT := $(LIBFT_PATH)/libft.a
 
 LIBS := $(LIBFT)
 
 
-all: objs_dir start_msg libft $(NAME)
-	@echo "$(SRCS)"
+all: objs_dir start_msg libft $(OBJS) $(NAME)
+	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 
 libft:
 	@$(MAKE) -C $(LIBS_DIR)/libft re
