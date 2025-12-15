@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 15:20:21 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/15 12:27:05 by isadbaib         ###   ########.fr        #
+#    Updated: 2025/12/15 23:01:32 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,8 @@ SRCS := $(addprefix $(SRCS_PATH)/,$(CFILES) $(SHARED_CFILES))
 OBJS := $(patsubst $(SRCS_PATH)/%.c,$(OBJS_PATH)/%.o,$(SRCS))
 
 INCS_PATH 			:= incs
-INCS_LIBFT 			:= libs/libs_so/LIBFT/incs
-INCS_GNL 			:= libs/libs_so/GNL/incs
+INCS_LIBFT 			:= libs/libft/incs
+INCS_GNL 			:= libs/libft/gnl/incs
 INCS := -I$(INCS_PATH) -I$(INCS_LIBFT) -I$(INCS_GNL)
 
 LIBFT_PATH := libs/libft
@@ -57,11 +57,9 @@ LIBS := $(LIBFT)
 
 
 all: objs_dir start_msg libft $(OBJS) $(NAME)
-	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 
 libft:
-	@$(MAKE) -C $(LIBS_DIR)/libft re
-#	@$(MAKE) -C $(LIBS_DIR)/libft all 
+	@$(MAKE) -C $(LIBS_DIR)/libft all
 
 objs_dir:
 	@mkdir -p $(OBJS_PATH)
@@ -81,7 +79,7 @@ $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
 
 clean:
 	@echo "$(CLEAN_ICON) $(BLUE)Cleaning object files Cub3D...$(RESET)"
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(OBJS_PATH)/*.o
 	@$(MAKE) -C $(LIBS_DIR)/libft clean
 
 fclean: clean

@@ -28,6 +28,7 @@ CLEAN_ICON		:= 🧹
 SUCCESS_ICON	:= ✅
 ERROR_ICON		:= ❌
 
+NAME := libft.a
 CC := cc
 CFLAGS := -g3 -O3 -Werror -Wall -Wextra
 
@@ -63,7 +64,7 @@ SHARED_CFILES := \
 
 SRCS_PATH := srcs
 GNL_SRCS_PATH := gnl
-OBJS_PATH := $(abspath ../../objs)
+OBJS_PATH := $(abspath ./objs)
 
 SRCS_PATH_BONUS := srcs_bonus
 
@@ -97,18 +98,6 @@ objs_dir:
 echo_build:
 	@echo "$(ROCKET_ICON) $(BOLD)Starting build $(RESET) $(MAGENTA)libft$(NAME)$(RESET)..."
 
-# echo_build_bonus:
-# 	@echo "$(ROCKET_ICON) $(BOLD)Starting build for$(RESET) $(MAGENTA)$(NAME_BONUS) (BONUS)$(RESET)..."
-
-# $(NAME): echo_build $(OBJS)
-# 	@echo "$(LINK_ICON) $(BOLD)Linking$(RESET) $(GREEN)$(NAME)$(RESET)"
-# 	@$(CC) $(CFLAGS) $(INCS) $(OBJS) -o $(NAME)
-# 	@echo "$(SUCCESS_ICON) $(GREEN)Build successful:$(RESET) $(BOLD)$(NAME)$(RESET)"
-
-# $(NAME_BONUS): echo_build_bonus $(OBJS_BONUS)
-# 	@echo "$(LINK_ICON) $(BOLD)Linking Bonus$(RESET) $(GREEN)$(NAME_BONUS)$(RESET)"
-# 	@$(CC) $(CFLAGS) $(INCS_BONUS) $(OBJS_BONUS) -o $(NAME_BONUS)
-# 	@echo "$(SUCCESS_ICON) $(GREEN)Build successful:$(RESET) $(BOLD)$(NAME_BONUS)$(RESET)"
 
 # Rule to creat .o files for the Mandatory Part;
 $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c
@@ -136,7 +125,6 @@ fclean: clean
 	@echo "$(CLEAN_ICON) $(BLUE)Removing executable:$(RESET) $(RED)$(NAME)$(RESET)"
 	@rm -f $(NAME)
 	@echo "$(CLEAN_ICON) $(BLUE)Removing executable:$(RESET) $(RED)$(NAME_BONUS)$(RESET)"
-	@rm -f $(NAME_BONUS)
 
 re: fclean all
 .PHONY: all bonus clean fclean re objs_dir echo_build echo_build_bonus
