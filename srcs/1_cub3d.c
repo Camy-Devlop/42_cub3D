@@ -6,7 +6,7 @@
 /*   By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:04:18 by alephoen          #+#    #+#             */
-/*   Updated: 2025/12/21 02:08:40 by alephoen         ###   ########.fr       */
+/*   Updated: 2025/12/21 03:22:22 by alephoen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	cub3d(int ac, const char **av)
 {
-
+	(void) ac;
+	(void) av;
 }
