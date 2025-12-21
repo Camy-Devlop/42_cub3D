@@ -1,0 +1,12 @@
+# Ignore .vscode config folder.
+*.o
+a.out
+*.swp
+*.s
+.gdb*
+.nfs*
+cub3d
+valgrind.pid
+tags
+.tags
+libs/minilibx/

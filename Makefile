@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/21 03:14:03 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/21 03:25:11 by alephoen         ###   ########.fr        #
+#    Updated: 2025/12/21 05:02:44 by alephoen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,29 @@ NAME := cub3D
 CC := cc
 CFLAGS := -g3 -O0 -Werror -Wall -Wextra
 
-LIBS_DIR := libs
-
 CFILES := \
 0_main.c \
 1_cub3d.c
+
+LIBS_DIR := libs
+
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+# MINILIBX_DIR	:= $(LIBS_DIR)/minilibx/minilibx-linux/
+	MINILIBX_DIR	:= $(abspath $(LIBS_DIR)/minilibx/minilibx-linux)
+	#MINILIBX		:= $(MINILIBX_DIR)/libmlx.a
+	MINILIBXCC		:= -I$(MINILIBX_DIR) -L $(MINILIBX_DIR) -lmlx
+	MINI_LBX_LIBS	:= -lXext -lX11 -lm
+else ifeq ($(UNAME_S),Darwin)
+# MINILIBX_DIR	:= $(LIBS_DIR)/minilibx/minilibx_macos/
+	MINILIBX_DIR	:= $(abspath $(LIBS_DIR)/minilibx/minilibx_macos)
+	#MINILIBX		:= $(MINILIBX_DIR)/libmlx.a
+	MINILIBXCC		:= -I$(MINILIBX_DIR) -L $(MINILIBX_DIR) -lmlx
+	MINI_LBX_LIBS	:= -framework OpenGL -framework AppKit
+endif
+
+MLX_INCS := -I$(MINILIBX_DIR)
 
 SRCS_PATH := srcs
 OBJS_PATH := objs
@@ -48,7 +66,8 @@ OBJS := $(patsubst $(SRCS_PATH)/%.c,$(OBJS_PATH)/%.o,$(SRCS))
 INCS_PATH 			:= incs
 INCS_LIBFT 			:= libs/libs_so/LIBFT/incs
 INCS_GNL 			:= libs/libs_so/GNL/incs
-INCS := -I$(INCS_PATH) -I$(INCS_LIBFT) -I$(INCS_GNL)
+INCS := -I$(INCS_PATH) -I$(INCS_LIBFT) -I$(INCS_GNL) -I$(MINILIBX_DIR)
+
 
 LIBFT_PATH := libs/libs_so/LIBFT
 LIBFT := $(LIBFT_PATH)/libft.a
@@ -141,7 +160,8 @@ link_h_files:
 
 $(NAME): $(OBJS) $(LIBS)
 	@echo "$(LINK_ICON) $(BOLD)Linking$(RESET) $(GREEN)$(NAME)$(RESET)"
-	@$(CC) $(CFLAGS) $(INCS) $(OBJS) $(LIBS) -o $(NAME)
+	@echo $(MINILIBX_DIR)
+	@$(CC) $(CFLAGS) $(INCS) $(OBJS) $(LIBS) $(MINILIBXCC) $(MINI_LBX_LIBS) -o $(NAME) -lm
 	@echo "$(SUCCESS_ICON) $(GREEN)Build successful:$(RESET) $(BOLD)$(NAME)$(RESET)"
 
 $(OBJS_PATH)/%.o: $(SRCS_PATH)/%.c

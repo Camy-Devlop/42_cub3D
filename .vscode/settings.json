@@ -1,0 +1,48 @@
+{
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.renderWhitespace": "all",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"git.autofetch": true,
+
+	"gitdoc.enabled": true,
+
+	"codam-norminette-3.command": "norminette", // command that the highlighter executes to get the norm errors
+	"codam-norminette-3.fileregex": "\\.[ch]$", // regex that matches the files you want to norm check
+	"codam-norminette-3.ignoreErrors": [ // do not highlight these norm errors
+		// "WRONG_SCOPE_COMMENT",
+		"LINE_TOO_LONG"
+	],
+	"codam-norminette-3.highlight-color": "rgba(255, 0, 0, 0.2)", // highlight norm errors in custom color. Can be in rgba, hex, or vscode.ThemeColor format.
+	"codam-norminette-3.displayErrorName": true,
+	"files.associations": {
+		"ft_btree.h": "c",
+		"limits.h": "c",
+		"stddef.h": "c",
+		"get_next_line.h": "c",
+		"sstream": "c",
+		"stdarg.h": "c",
+		"libft.h": "c",
+		"ft_printf_lib.h": "c",
+		"unistd.h": "c",
+		"ft_fdprintf.h": "c",
+		"signal_handler.h": "c",
+		"stdlib.h": "c",
+		"minishell.h": "c",
+		"posix_parser.h": "c",
+		"types.h": "c",
+		"wait.h": "c",
+		"mini_macros.h": "c",
+		"export_env.h": "c",
+		"ft_stdlib.h": "c",
+		"ft_read_line.h": "c",
+		"string.h": "c",
+		"stdio.h": "c",
+		"expnd.h": "c",
+		"stdbool.h": "c",
+		"valgrind.h": "c",
+		"time.h": "c"
+	} // display name of error on hover
+}
+
