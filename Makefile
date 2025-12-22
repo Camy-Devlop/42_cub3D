@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/13 15:20:21 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/15 23:01:32 by isadbaib         ###   ########.fr        #
+#    Updated: 2025/12/22 23:05:58 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ FSAN   := -fsanitize=address,undefined
 
 LIBS_DIR := libs
 
-CFILES := cub3D.c
+CFILES := cub3D.c \
+		  check/ft_is_file.c
 
 SRCS_PATH := srcs
 OBJS_PATH := objs
@@ -56,13 +57,16 @@ LIBFT := $(LIBFT_PATH)/libft.a
 LIBS := $(LIBFT)
 
 
-all: objs_dir start_msg libft $(OBJS) $(NAME)
+all: objs_dir objs_dir_sous start_msg libft $(OBJS) $(NAME)
 
 libft:
 	@$(MAKE) -C $(LIBS_DIR)/libft all
 
 objs_dir:
 	@mkdir -p $(OBJS_PATH)
+
+objs_dir_sous:
+	@mkdir -p $(OBJS_PATH)/check
 
 start_msg:
 	@echo "$(ROCKET_ICON) $(BOLD)Starting build $(RESET) $(MAGENTA)$(NAME)$(RESET)..."
