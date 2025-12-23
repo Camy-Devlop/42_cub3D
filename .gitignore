@@ -6,7 +6,8 @@ a.out
 .gdb*
 .nfs*
 cub3d
+cub3D
 valgrind.pid
 tags
 .tags
-libs/minilibx/
+#libs/minilibx/

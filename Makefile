@@ -28,7 +28,8 @@ CLEAN_ICON		:= 🧹
 SUCCESS_ICON	:= ✅
 ERROR_ICON		:= ❌
 
-NAME := cub3D
+NAME := cub3d
+# NAME := cub3D
 
 CC := cc
 CFLAGS := -g3 -O0 -Werror -Wall -Wextra
