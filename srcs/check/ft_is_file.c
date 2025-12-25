@@ -6,7 +6,7 @@
 /*   By: isadbaib <isadbaib@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 22:50:29 by isadbaib          #+#    #+#             */
-/*   Updated: 2025/12/22 23:28:23 by isadbaib         ###   ########.fr       */
+/*   Updated: 2025/12/25 21:05:34 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,38 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-bool	is_exist_file(char *addres)
+int	ft_nb_line_fd(int fd, t_data_file **f)
 {
-	int	fd;
+	bool	test;
+	char	**f;
+	t_gnl_buf **file;
 
+	file = NULL;
+	f = NULL;
+	while (test)
+	{
+		f = get_next_line(fd, &f, &file);
+		if (!f)
+		{
+			fin = true;
+			break ;
+		}
+		ff->nb_line++;
+		free(f);
+	}
+}
+
+bool	is_exist_file(char *addres, t_data_file **f)
+{
+	int		fd;
+
+	test = false;
 	if (!addres)
 		return (printf("Error : not adddress\n"), false);
 	fd = open(addres, O_RDONLY);
 	if (fd < 0)
 		return (printf("Error : file not exist or not permission\n"), false);
+
 	close(fd);
 	return (true);
 }

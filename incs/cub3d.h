@@ -6,13 +6,14 @@
 /*   By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:12:48 by alephoen          #+#    #+#             */
-/*   Updated: 2025/12/25 18:27:47 by isadbaib         ###   ########.fr       */
+/*   Updated: 2025/12/25 20:34:50 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# include <stdbool.h>
 # include <stddef.h>
 # include <get_next_line.h>
 
@@ -90,11 +91,13 @@ typedef struct s_meta
 	t_keys			keys;
 	int				err;
 }	t_meta;
+
 typedef struct s_line
 {
 	int		size;
 	char	*string;
-}
+}	t_line;
+
 typedef struct s_data_file
 {
 	char	*name_file;
