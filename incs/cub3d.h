@@ -6,7 +6,7 @@
 /*   By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 02:12:48 by alephoen          #+#    #+#             */
-/*   Updated: 2025/12/21 02:43:05 by alephoen         ###   ########.fr       */
+/*   Updated: 2025/12/25 18:27:47 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,17 @@ typedef struct s_meta
 	t_keys			keys;
 	int				err;
 }	t_meta;
-
+typedef struct s_line
+{
+	int		size;
+	char	*string;
+}
+typedef struct s_data_file
+{
+	char	*name_file;
+	int		nb_line;
+	int		max_colums;
+	t_line	*config;
+	t_line	*map;
+}	t_data_file;
 #endif

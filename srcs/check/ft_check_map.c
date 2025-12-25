@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: isadbaib <isadbaib@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:08:18 by isadbaib          #+#    #+#             */
-/*   Updated: 2025/12/25 17:36:53 by isadbaib         ###   ########.fr       */
+/*   Created: 2025/12/25 14:36:55 by isadbaib          #+#    #+#             */
+/*   Updated: 2025/12/25 14:37:14 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
-
-bool	is_exist_file(char *addres);
-
-bool ft_check(char *addres)
+static int is_map_char(char c)
 {
-	 if (!is_exist_file(addres))
-	 	return (false);
-
-	 return (true);
+	return (c=='0' || c=='1' || c==' ' || c=='N' || c=='S' || c=='E' || c=='W');
 }

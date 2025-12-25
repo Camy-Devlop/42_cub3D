@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/21 03:14:03 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/21 05:02:44 by alephoen         ###   ########.fr        #
+#    Updated: 2025/12/25 17:44:00 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,8 @@ NAME := cub3d
 CC := cc
 CFLAGS := -g3 -O0 -Werror -Wall -Wextra
 
-CFILES := \
-0_main.c \
-1_cub3d.c
+CFILES := cub3D.c \
+
 
 LIBS_DIR := libs
 
@@ -78,9 +77,9 @@ GNL := $(GNL_PATH)/gnl.a
 
 LIBS :=  $(GNL) $(LIBFT)
 
-.PHONY: all clean fclean re rere objs_dir start_msg make_libs libs_install link_h_files gen_ctags
+.PHONY: all clean fclean re rere objs_dir start_msg make_libs libs_install link_h_files #gen_ctags
 
-all: objs_dir start_msg linkfiles.conf create_linkfileswithconf.sh link_h_files gen_ctags make_libs libs_install $(NAME)
+all: objs_dir start_msg linkfiles.conf create_linkfileswithconf.sh link_h_files make_libs libs_install $(NAME)
 
 gnl:
 	@$(MAKE) -C $(LIBS_DIR)/gnl re
@@ -98,13 +97,14 @@ libs_install:
 
 objs_dir:
 	@mkdir -p $(OBJS_PATH)
+	@mkdir -p $(OBJS_PATH)/check
 
 start_msg:
 	@echo "$(ROCKET_ICON) $(BOLD)Starting build $(RESET) $(MAGENTA)$(NAME)$(RESET)..."
 
 gen_ctags:
 	@echo "$(ROCKET_ICON) $(BOLD)Generating $(RESET) $(MAGENTA)ctags$(RESET)..."
-	@ctags -R \
+#	@ctags -R \
 		--languages=C \
 		--kinds-C=+fpd \
 		--fields=+nS \

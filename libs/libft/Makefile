@@ -6,7 +6,7 @@
 #    By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/14 17:47:48 by alephoen          #+#    #+#              #
-#    Updated: 2025/12/08 20:03:36 by alephoen         ###   ########.fr        #
+#    Updated: 2025/12/25 18:05:43 by isadbaib         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ ft_substr.c \
 ft_split_2.c \
 ft_substr_2.c \
 ft_print_err_msg.c \
-ft_fd_putstr.c
+ft_fd_putstr.c \
+ft_memjoin.c
 
 SRCS_PATH := srcs
 OBJS_PATH := $(abspath objs)

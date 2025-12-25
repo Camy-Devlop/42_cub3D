@@ -6,13 +6,15 @@
 /*   By: alephoen <alephoen@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:57:22 by alephoen          #+#    #+#             */
-/*   Updated: 2025/11/24 12:58:24 by alephoen         ###   ########.fr       */
+/*   Updated: 2025/12/25 18:10:24 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdint.h>
+#include <stdlib.h>
 
+void	*ft_memcpy(void *des, const void *src, size_t n);
 size_t	ft_memjoin(void const **s1, void const *s2,
 			size_t s1len, size_t s2len)
 {
