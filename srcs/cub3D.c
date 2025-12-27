@@ -6,7 +6,7 @@
 /*   By: isadbaib <isadbaib@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 21:01:18 by isadbaib          #+#    #+#             */
-/*   Updated: 2025/12/25 21:27:04 by isadbaib         ###   ########.fr       */
+/*   Updated: 2025/12/27 12:11:08 by isadbaib         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int  printf(const char *s, ...);
 #include <string.h>
 
 char	*get_next_line(int fd, char **line, t_gnl_buf ***gnl_bufers);
-
+//test
 bool	check_list_addres(char **list, int n);
 
 int main(void)
